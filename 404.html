@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada</title>
+</head>
+<body>
+    <div id="message"></div>
+
+    <script>
+        // Definir el objeto de trampolines
+        const trampolins = {
+            trampolin: [
+                { origin: 'xDefT', redirection: 'https://wa.me/5493412293515' }
+                // Puedes agregar más aquí si lo necesitas
+            ]
+        };
+
+        // Obtener el slug de la URL
+        const slug = window.location.pathname.split('/').pop();
+
+        // Guardar el slug en localStorage
+        localStorage.setItem('lastSlug', slug);
+
+        // Buscar si el slug coincide con algún origin en el objeto
+        const match = trampolins.trampolin.find(t => t.origin === slug);
+
+        if (match) {
+            // Si hay match, redirigir a la URL de redirección
+            window.location.href = match.redirection;
+        } else {
+            // Si no hay match, mostrar el mensaje de que la URL no existe
+            document.getElementById('message').innerText = 'La URL que solicitas no existe.';
+        }
+    </script>
+</body>
+</html>
