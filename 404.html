@@ -1,14 +1,69 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página no encontrada</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>jumpr</title>
+  <style>
+    /* Loader */
+    .loader {
+      height: 60px;
+      aspect-ratio: 2;
+      border: 15px solid #fff;
+      box-sizing: border-box;
+      background: 
+        radial-gradient(farthest-side,#FF6600 98%,#0000) left/30px 30px,
+        radial-gradient(farthest-side,#FF6600 98%,#0000) left/30px 30px,
+        radial-gradient(farthest-side,#FF6600 98%,#0000) center/30px 30px,
+        radial-gradient(farthest-side,#FF6600 98%,#0000) right/30px 30px,
+        #fff;
+      background-repeat: no-repeat;
+      filter: blur(4px) contrast(10);
+      animation: l14 1s ease-in-out infinite;
+    }
+    @keyframes l14 {
+      100%  {background-position:right,left,center,right}
+    }
+
+    /* Container: Flexbox centered layout */
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+      background-color: #f8fafc; /* Light background */
+    }
+
+    /* Title styling */
+    .title {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      font-weight: bold;
+      color: #0f172a; /* slate-900 */
+      font-size: 1.5rem; /* text-2xl (24px) */
+      margin-bottom: 1rem;
+    }
+      
+    #message {
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      color: red; /* slate-900 */
+      font-size: 1.2rem; /* text-2xl (24px) */
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
+    <h1 class="title">jumpr</h1>
+    <div class="loader"></div>
     <div id="message"></div>
-
-    <script>
+  </div>
+<script>
         // Definir el objeto de trampolines
         const trampolins = {
             trampolin: [
@@ -39,3 +94,4 @@
     </script>
 </body>
 </html>
+
